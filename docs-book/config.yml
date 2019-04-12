@@ -7,17 +7,17 @@ repo_link_enabled: true
 
 pcf_header: &local_pcf
   use_local_header: true
-  latest_stable_version: 1.7
-  changelog_href: http://docs.pivotal.io/pivotalcf/pcf-release-notes/
+  latest_stable_version:
+  changelog_href: '#'
   local_header_img: /images/cloud_rings.png
-  local_header_title: Pivotal Cloud Foundry
+  local_header_title: Pivotal Distribution of OpenJDK
 public_host: hello
 
 sections:
   - repository:
       name: docs-content
-    directory: myservice
-    subnav_template: myservice_subnav.erb       
+    directory: pivotal-distribution-openjdk
+    subnav_template: pivotal-distribution-openjdk_subnav.erb       
 
 template_variables:                             # optional
 
