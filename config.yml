@@ -1,0 +1,31 @@
+---
+book_repo: pivotal-cf/docs-pivotal-distribution-openjdk
+layout_repo: pivotal-cf/docs-layout-repo
+layout_repo_ref: master
+
+feedback_enabled: true
+
+broken_link_exclusions: iefix|arrowhead
+repo_link_enabled: true
+
+public_host: docs.pivotal.io
+
+elastic_search: true
+
+sections:
+- repository:
+    name: pivotal-cf/docs-pivotal-distribution-openjdk
+    at_path: docs-content
+  directory: pivotal-distribution-openjdk
+  subnav_template: pivotal-distribution-openjdk_subnav.erb
+  product_info:
+    use_local_header: true
+    latest_stable_version: 
+    changelog_href: 
+    local_header_img: /images/cloud_rings.png
+    local_header_title: Pivotal Distribution of OpenJDK
+    search_placeholder: Search
+    url_prefix: pivotal-distribution-openjdk
+    local_product_version: 
+    local_header_links: []
+    local_header_version_list:

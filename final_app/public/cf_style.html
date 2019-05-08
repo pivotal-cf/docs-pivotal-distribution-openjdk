@@ -1,0 +1,618 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Cloud Foundry Documentation Standards |
+    Pivotal Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MW4LZHR');
+</script>
+
+
+<!-- <script type="text/javascript">
+  if (window.location.host === 'docs.pivotal.io') {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'pivotal.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script> -->
+
+<script type="text/javascript">
+  var blackList = ['acceptance'];
+
+  blackList.forEach(function(blackListedEnv) {
+    if (document.URL.indexOf(blackListedEnv) > -1 && blackListedEnv != "") {
+      $('head').append('<meta name="hashtag" content="PivotalMoment">');
+    }
+  });
+</script>
+
+<!-- CrazyEgg Tracking Script -->
+<!--   <script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0055/2990.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script> -->
+
+<!-- Munchkin Marketo Script -->
+<!-- <script type="text/javascript">
+  (function() {
+    var didInit = false;
+
+    function initMunchkin() {
+      if (didInit === false) {
+        didInit = true;
+        Munchkin.init('625-IUJ-009');
+      }
+    }
+
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script> -->
+
+</head>
+
+<body class="_ __cf_style">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "pivotal.io";
+    </script>
+
+      <header class="global-header header header-layout js-bar-links">
+    <div class='super-nav'>
+      <div class='container-modified'>
+        <div class='header-links'>
+          <div class="header-item" id='docs-header-item'>
+            <a href='https://docs.pivotal.io'>Documentation</a>
+          </div>
+          <div class="header-item">
+            <a href="https://network.pivotal.io">Downloads</a>
+          </div>
+          <div class="header-item">
+            <a href="https://pivotal.io/support">Support</a>
+          </div>
+          <div class='header-item' id='contact-header-item'>
+            <a href='https://pivotal.io/contact'>Contact Us</a>
+          </div>
+          <div class='header-item'>
+            <a href="https://login.run.pivotal.io">Sign In</a>
+          </div>
+          <div class='header-item'>
+            <a href="https://account.run.pivotal.io/z/uaa/sign-up">Register</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class='container-modified'>
+      <a href="/" class="global-header-title">
+        <svg class="pivotal-logo" xmlns="http://www.w3.org/2000/svg" width="174.72" height="40.94" viewBox="0 0 174.72 40.94"><path class="a" d="M38.77,6h-6.2V0h6.2Zm0,34.24H32.56V10.41h6.22Z"/><path class="a" d="M74.67,10.41,66,36.18c-1.49,4.22-4.15,4.76-6.3,4.76-3.19,0-5.11-1.47-6.24-4.75l-7.22-21.4H43.39V10.41h7.45l7.44,24c.33,1,.53,1.63,1.43,1.63s1.13-.62,1.43-1.63l7.59-24Z"/><path class="a" d="M90,10.41c8.05,0,13.66,5.31,13.66,12.92V28c0,7.6-5.61,12.92-13.66,12.92S76.32,35.62,76.32,28V23.33c0-7.61,5.62-12.92,13.67-12.92M90,36c4.81,0,7.8-3.64,7.8-8V23.33c0-4.37-3-8-7.8-8-5.1,0-7.8,3.64-7.8,8V28c0,4.37,2.82,8,7.8,8"/><path class="a" d="M153.32,11.36A53.46,53.46,0,0,0,141.8,10c-8.17,0-13.24,5.15-13.24,13.45v3.27c0,8.3,5.07,13.53,13.24,13.53.19,0,1.64,0,2.3-.06v-5l-2.3.07c-4.45,0-7.43-3.43-7.43-8.53V23.44c0-5.09,3-8.52,7.43-8.52a43.88,43.88,0,0,1,6.09.38l.33.08V40.24h6.22V12.4c0-.53,0-.74-1.13-1"/><rect class="a" x="160.44" width="6.22" height="40.24"/><path class="a" d="M10.92,0H0V40.24H6.47V5.59h3.79c.81,0,1.49,0,2.18.06,5.61.1,8.35,2.33,8.35,6.69,0,.17,0,.29,0,.47,0,4-2.21,6.71-8.32,6.71H10.67c0,1.55,0,4.41,0,5.41.63,0,1.22.06,1.82.06,8.78,0,15-3.45,15-12.11,0-.17,0-.35,0-.52C27.44,3.38,20.69,0,10.92,0"/><path class="a" d="M114.7,4v6.43h10.13v4.82H114.7V32.61c0,2.73,1.74,2.8,4.26,2.8h5.87v4.83h-7.94c-5.87,0-8.48-2.35-8.48-7.63V4.84Z"/><path class="a" d="M169.52,37.64a2.6,2.6,0,1,1,2.6,2.6A2.61,2.61,0,0,1,169.52,37.64Zm2.6-2.25a2.23,2.23,0,1,0,2.22,2.24A2.24,2.24,0,0,0,172.12,35.39ZM171.55,39h-.31V36.19h.8c.72,0,1.06.33,1.06.86a.82.82,0,0,1-.58.8l.74,1.17h-.36l-.68-1.1-.67,0Zm.51-1.34c.46,0,.75-.24.75-.62s-.25-.6-.79-.6h-.48V37.7Z"/></svg><svg class="documentation-letters" xmlns="http://www.w3.org/2000/svg" width="358.62" height="30.84" viewBox="0 0 358.62 30.84"><path class="a" d="M3.71,37.26V7.45h9.52c9.25,0,15.06,6.75,15.06,14.92S22.48,37.26,13.23,37.26Zm21.9-14.89c0-7-4.47-12.6-12.38-12.6h-7V34.93h7C21.1,34.93,25.61,29.35,25.61,22.37Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M33.52,22.37C33.52,13.66,39.24,7,48,7s14.48,6.7,14.48,15.41S56.72,37.79,48,37.79,33.52,31.09,33.52,22.37Zm26.28,0c0-7.55-4.64-13.09-11.8-13.09S36.21,14.82,36.21,22.37s4.6,13.1,11.79,13.1S59.8,29.88,59.8,22.37Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M67.67,22.37C67.67,13.21,74.33,7,82.78,7a13.38,13.38,0,0,1,10.86,5.27L91.5,13.61a10.84,10.84,0,0,0-8.72-4.33c-7,0-12.42,5.32-12.42,13.09s5.45,13.1,12.42,13.1a10.82,10.82,0,0,0,8.72-4.34l2.19,1.34a13.51,13.51,0,0,1-10.91,5.32C74.33,37.79,67.67,31.54,67.67,22.37Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M98.79,25.82V7.45h2.59V25.77c0,6,3.17,9.7,9,9.7s9-3.67,9-9.7V7.45H122V25.82c0,7.37-3.94,12-11.62,12S98.79,33.15,98.79,25.82Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M154.75,37.26V10.66l-10.87,26.6h-1L132,10.66v26.6h-2.55V7.45h3.8l10.14,24.8,10.1-24.8h3.85V37.26Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M164.76,37.26V7.45h18.91V9.77H167.31v11h16v2.32h-16v11.8h16.36v2.33Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M211.29,37.26,192.52,11.65V37.26H190V7.45h2.59L211.25,32.7V7.45h2.54V37.26Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M228.81,37.26V9.77h-9.74V7.45h22.08V9.77h-9.74V37.26Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M264.93,37.26,262,29.93H246.2l-2.95,7.33H240.3L252.51,7.45h3.17l12.2,29.81ZM254.11,10.17,247.05,27.6h14.08Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M276.78,37.26V9.77H267V7.45h22.07V9.77h-9.74V37.26Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M294.39,37.26V7.45h2.55V37.26Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M303.24,22.37C303.24,13.66,309,7,317.72,7s14.48,6.7,14.48,15.41-5.76,15.42-14.48,15.42S303.24,31.09,303.24,22.37Zm26.28,0c0-7.55-4.65-13.09-11.8-13.09s-11.8,5.54-11.8,13.09,4.61,13.1,11.8,13.1S329.52,29.88,329.52,22.37Z" transform="translate(-3.71 -6.96)"/><path class="a" d="M359.83,37.26,341.06,11.65V37.26h-2.55V7.45h2.59L359.78,32.7V7.45h2.55V37.26Z" transform="translate(-3.71 -6.96)"/></svg>
+      </a>
+      <div class="header-item embedded-searchbar">
+          <form method="get" action="/search">
+            <input name="q" placeholder="Search" class="search-box" />
+          </form>
+      </div>
+      <div class="btn-menu" data-behavior="MenuMobile"></div>
+      <div class='header-links mobile-only'>
+        <div class="header-item" id='docs-header-item'>
+          <a href='https://docs.pivotal.io'>Documentation</a>
+        </div>
+        <div class="header-item">
+          <a href="https://network.pivotal.io">Downloads</a>
+        </div>
+        <div class="header-item">
+          <a href="https://pivotal.io/support">Support</a>
+        </div>
+        <div class='header-item' id='contact-header-item'>
+          <a href='https://pivotal.io/contact'>Contact Us</a>
+        </div>
+        <div class='header-item'>
+          <a href="https://login.run.pivotal.io">Sign In</a>
+        </div>
+        <div class='header-item'>
+          <a href="https://account.run.pivotal.io/z/uaa/sign-up">Register</a>
+        </div>
+
+        <div class="header-item embedded-searchbar">
+            <form method="get" action="/search">
+              <input name="q" placeholder="Search" class="search-box" />
+            </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        
+          <h1 class="title-container" >
+    Cloud Foundry Documentation Standards
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li>
+<a href="#basics">Style Basics</a><ul>
+<li><a href="#empathy">Empathize with the Reader</a></li>
+<li><a href="#audience">Audience and Voice</a></li>
+<li><a href="#contexts">Consider Multiple Contexts</a></li>
+</ul>
+</li>
+<li><a href="#text_format">Text Formatting Conventions</a></li>
+<li><a href="#grammar">Grammar</a></li>
+<li><a href="#punctuation">Punctuation</a></li>
+<li><a href="#diction">Word Choice</a></li>
+<li>
+<a href="#formatting">Layout Conventions</a><ul>
+<li><a href="#bullets">Bulleted Lists</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#procedures">Procedures</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+<li><a href="#products">Product Naming Conventions</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <p>This guide presents documentation standards for the Cloud Foundry (CF) Documentation team. In general, use your best judgement when applying these rules, or when resolving situations not covered here.</p>
+
+<p>If you find that you have standards questions that aren&rsquo;t yet addressed, add a chore to the CF Documentation private backlog to request an update, or submit a pull request to update the guide yourself.</p>
+
+<h2 id="style-basics"><a id='basics'>Style Basics</a></h2>
+
+<p>The guidelines in this section serve as basic principles for writing helpful documentation.</p>
+
+<h3 id="empathize-with-the-reader"><a id='empathy'>Empathize with the Reader</a></h3>
+
+<p>Our readers typically only look for information when they are already frustrated.
+They tried to do something, it didn’t work, and now they need help.</p>
+
+<p>To serve them well, the documentation needs to:</p>
+
+<ul>
+<li>Use clear, easy to understand language.</li>
+<li>Provide examples.</li>
+<li>Make it easy for the user to find information. Group related topics together. Provide links to other parts of the documentation where appropriate. Use headers to make the docs skimmable.</li>
+</ul>
+
+<h3 id="audience-and-voice"><a id='audience'>Audience and Voice</a></h3>
+
+<p>Strive to write clearly and concisely.</p>
+
+<ul>
+<li>Determine the audience for a topic before you begin writing, including the reader&rsquo;s familiarity with the topic and with specific terms.</li>
+<li>Avoid long or complicated sentences. Try to limit sentences to one thought.</li>
+<li>Avoid idiomatic phrasing. Idioms can be confusing for non-native English speakers.</li>
+<li><p>Write in active voice.</p>
+
+<p>&ldquo;The logging feature collects STDERR and STDOUT&rdquo; instead of &ldquo;STDERR and STDOUT are collected.&rdquo;</p></li>
+<li><p>Remember that not all readers will be native English speakers, so prefer simple words over their ornate cousins.</p></li>
+<li><p>Write directly to the reader. Use &ldquo;you.&rdquo;</p>
+
+<p>For example:</p>
+
+<p>If you have a <code>manifest.yml</code> file in your current working directory, <code>APP_NAME</code> defaults to the name of the application in the manifest.</p></li>
+<li><p>Avoid using language that a reader could perceive as condescending. For example, avoid using the terms &ldquo;simple&rdquo; or &ldquo;easy&rdquo; when describing a procedure.</p></li>
+</ul>
+
+<h3 id="consider-multiple-contexts"><a id='contexts'>Consider Multiple Contexts</a></h3>
+
+<p>Cloud Foundry exists in three contexts:</p>
+
+<ul>
+<li><strong>OSS</strong>: Cloud Foundry and BOSH are open source.</li>
+<li><strong>PCF</strong>: The commercial packaged offering is called Pivotal Cloud Foundry&reg;.</li>
+<li><strong>PWS</strong>: Pivotal Web Services is our commercial hosted offering.</li>
+</ul>
+
+<p>Much of our documentation needs to work for multiple contexts.</p>
+
+<p>As you are writing, check what the prose looks like when published in all the contexts that it serves.
+Something that makes complete sense in one context (e.g. &ldquo;target api.run.pivotal.io&rdquo;) would make no sense in another context.</p>
+
+<h2 id="text-formatting-conventions"><a id='text_format'>Text Formatting Conventions</a></h2>
+
+<table border="1">
+<tr>
+  <td><strong>bold</strong></td>
+  <td>  Bold the names of UI elements when you instruct the user to interact with them. For example:
+
+    </br>&ldquo;In the <strong>Settings</strong> pane, click <strong>Save</strong>.&rdquo;</br></br>
+
+    Also bold run-in headings, unless the headings call for a different format. For example:
+
+    <ul>
+      <li><strong>OSS</strong>: Cloud Foundry and BOSH are open source.</li>
+      <li><strong>PCF</strong>: The commercial packaged offering is called Pivotal Cloud Foundry&reg;. </li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td><em>italic</em></td>
+  <td>Use italics sparingly to introduce key concepts or refer to another topic or manual when that reference is not linked. Also use italics when referring to a word as a word, rather than as a functional part of the sentence.</td>
+</tr>
+<tr>
+  <td>Note</td><td>Notes alert the reader to important, advisory, or surprising information.</br>
+    </br>If you add a note that applies to a specific step in a procedure, align the note with the step. Confirm that list numbering continues after the note.</br>
+    </br>If the note applies to the whole procedure, align it with the regular body paragraphs.</td>
+</tr>
+<tr>
+  <td>plain</td><td>Keyboard key names are plain text, not monospaced. For example, &ldquo;Press Enter.&rdquo;</br>
+    </br>Use plain text to refer to a value that you are not instructing the user to enter or click.</td>
+</tr>
+<tr>
+  <td><strong>></strong></td><td>This symbol leads you through nested menu items or dialog box options to a final action. For example:</br>
+    </br>Refer to <strong>Elastic Runtime>Credentials</strong> for the UAA admin name and password.</td>
+</tr>
+<tr>
+  <td><code>code</code></td><td>Use code formatting for sections of code, programming examples, filenames, and path names. Also use code formatting to indicate text that the user enters. </td>
+</tr>
+<tr>
+  <td>Terminal block</td><td>Use terminal formatting for commands that the user enters in the terminal.</td>
+</tr>
+<tr>
+  <td>Placeholder text</td><td>Placeholder text, indicating that users should supply their own values, should be in all caps. For example:</br>
+    <code>cf create-user USERNAME PASSWORD</code></br></br>
+      If the placeholder text contains multiple words, separate the words with hyphens. For example:</br>
+        <code>https://console.YOUR-SYSTEM-DOMAIN.example.com</code>
+  </td>
+</tr>
+<tr>
+  <td>Dot file extensions, such as <code>.html</code></td><td>Always use the article <em>a</em>, not <em>an</em>, to precede a reference to a file extension. Use all caps instead of the file extension when it is used as an acronym or when referring to the file format. </td>
+</tr>
+</table>
+
+<h2 id="grammar"><a id='grammar'>Grammar</a></h2>
+
+<h3 id="indefinite-articles-with-abbreviations">Indefinite Articles with Abbreviations</h3>
+
+<p>When an abbreviation follows an indefinite article, the choice of <em>a</em> or <em>an</em> is determined by the way the abbreviation reads out loud.</p>
+
+<h3 id="modifiers">Modifiers</h3>
+
+<p>Place a modifier as close as possible to the word or phrase it modifies. Misplaced modifiers confuse the reader and obfuscate the meaning of the sentence.</p>
+
+<h3 id="personification">Personification</h3>
+
+<p>Avoid personifying inanimate objects by giving them possession or by using words that imply agency.</p>
+
+<h3 id="prepositional-phrases">Prepositional Phrases</h3>
+
+<p>Too many prepositional phrases can make your writing difficult to read. You can rewrite most sentences containing multiple prepositional phrases to make them more clear.</p>
+
+<h3 id="tense">Tense</h3>
+
+<p>Avoid the future tense. In most cases, you can rewrite to use the present tense.</p>
+
+<h3 id="which-vs-that">Which vs That</h3>
+
+<p><em>That</em> and <em>which</em> are not interchangeable. <em>That</em> identifies something as essential, or a restrictive clause. <em>Which</em> is used when something is auxiliary or nonessential, and introduces a nonrestrictive clause. Generally, if you can drop the clause and still make sense of the sentence, use <em>which</em>. <em>Which</em> always takes a comma.</p>
+
+<h2 id="punctuation"><a id='punctuation'>Punctuation</a></h2>
+
+<ul>
+<li><p>Use a single space between sentences, rather than two spaces.</p></li>
+<li><p>Always use the Oxford comma.</p></li>
+<li><p>Avoid using contractions, unless you are using unusually friendly language in a special circumstance.</p></li>
+<li><p>Always place punctuation that indicates a pause or a stop inside quotation marks.</p></li>
+<li><p>Parentheses in text should be used only to introduce acronyms.</p></li>
+</ul>
+
+<h2 id="word-choice"><a id='diction'>Word Choice</a></h2>
+
+<p>Less is more. If you can make your point with fewer words, do so (within reason, of course).</p>
+
+<h3 id="allow-and-enable">Allow and Enable</h3>
+
+<p>Avoid using weak verbs such as <em>allow</em> and <em>enable</em>. Even if the sentence is written in active voice, these verbs connote receiving an action, not performing it.</p>
+
+<h3 id="buttons">Buttons</h3>
+
+<p>When referring to command buttons, don’t refer to them as command buttons. For example:</p>
+
+<p>Click <strong>Save</strong>.</p>
+
+<h3 id="checkboxes">Checkboxes</h3>
+
+<p>Include both the checkbox name and the word <em>checkbox</em> in each reference. Avoid the phrase <em>check the checkbox</em>; it is ambiguous. Instead, use <em>select/clear</em> or <em>enable/disable</em>. Be consistent within a single topic. For example:</p>
+
+<p>Select the <strong>Disable Custom Buildpacks</strong> checkbox.</p>
+
+<h3 id="clicking">Clicking</h3>
+
+<p>Use <em>click</em>, never <em>click on</em>. For example:</p>
+
+<p>Click <strong>Save</strong>.</p>
+
+<h3 id="demonstrative-pronouns">Demonstrative Pronouns</h3>
+
+<p>Do not use demonstrative pronouns, such as <em>this</em> or <em>that</em>, as sentence subjects. Doing so obscures the pronoun antecedent. Reword to avoid and to be more specific; often, by using the word as a demonstrative adjective instead. For example:</p>
+
+<p><em>This software</em> leads the market.</p>
+
+<h3 id="filename">Filename</h3>
+
+<p>Use <em>filename</em>, not <em>file name</em>.</p>
+
+<h3 id="headings">Headings</h3>
+
+<p>In general, avoid gerunds in headings, and use the imperative instead. For example:</p>
+
+<p>Create New User Accounts</p>
+
+<h3 id="information-about">Information About</h3>
+
+<p>Use <em>information about</em>, not <em>information on</em>.</p>
+
+<h3 id="log-in">Log In</h3>
+
+<p><em>Login</em> is used as an adjective; <em>log in</em> is the correct verb form.</p>
+
+<h3 id="note">Note</h3>
+
+<p>Use <em>note</em> only to introduce a formatted Note section. Otherwise, use <em>notice</em>, or reword to avoid.</p>
+
+<h3 id="select-vs-choose">Select vs Choose</h3>
+
+<p>Use <em>choose</em> when instructing the reader to make a single choice from among multiple options, and when you are not asking the reader to interact with a UI element.</p>
+
+<p>Use <em>select</em> when referring to a tab in a tabbed dialog. In general, also <em>select</em> rather than <em>click</em> when the UI element in question remains displayed after the user clicks it. For example:</p>
+
+<p>Select <strong>Assign Networks</strong>. Elastic Runtime runs on the network you select. <em>[<strong>Assign Networks</strong> highlights and continues to display on the left, along with the names of the other configuration pages.]</em></p>
+
+<h3 id="titles">Titles</h3>
+
+<p>Use gerunds in titles where possible. For example:</p>
+
+<p><em>Getting Started with Pivotal Cloud Foundry&reg;</em></p>
+
+<h3 id="topics-vs-pages">Topics vs Pages</h3>
+
+<p>Refer to our help documents as <em>topics</em>, not <em>pages</em> or <em>articles</em>.</p>
+
+<h3 id="want">Want</h3>
+
+<p>When necessary, use <em>want</em>. Do not use <em>wish</em> or <em>desire</em>.</p>
+
+<h3 id="(front|back)(end|-end|-end)">(Front|Back)(end| end|-end)</h3>
+
+<p>Use two words, i.e. &ldquo;front end&rdquo;, not &ldquo;frontend&rdquo; or &ldquo;front-end&rdquo;.</p>
+
+<h2 id="layout-conventions"><a id='formatting'>Layout Conventions</a></h2>
+
+<h3 id="bulleted-lists"><a id='bullets'>Bulleted Lists</a></h3>
+
+<p>If you have a sentence with many modifiers, consider breaking it into list format for clarity.</p>
+
+<p>Bulleted lists should have parallel construction. Always capitalize the first item. Use punctuation at the end of the line only if the bulleted items are complete sentences and/or contain multiple sentences. If the items are words or phrases, do not add trailing punctuation. Example:</p>
+
+<ul>
+<li>Use bullets where appropriate.</li>
+<li>Capitalize the first item.</li>
+<li>Don’t add punctuation to phrases.</li>
+<li>Bulleted lists add clarity. Use them.</li>
+</ul>
+
+<p>In general, bulleted lists should not nest. (This is a guideline, not a rule. However, if you are nesting bullets, there’s probably another way to structure the information that will be more readable. Consider using section headers for the top level.)</p>
+
+<p>In general, avoid starting a section with a bulleted list. Write a sentence or two to introduce it. However, where you judge the context to be sufficiently clear, it might be better to lead with a bulleted list than to include useless sentences as filler.</p>
+
+<p>Try not to end a section with a bulleted list (though as above, use your best judgement to avoid useless filler). Write a sentence or two as a conclusion.</p>
+
+<h3 id="images"><a id='images'>Images</a></h3>
+
+<p>Include a one pixel black border around images that lack a natural border.</p>
+
+<p>To annotate an image, use numbered callouts rather than labels.
+Use red circles or squares when necessary to call attention to a portion of an image, but use sparingly. In most cases, the callout is unnecessary, or the image could be cropped further as an alternative. Do not use arrows.</p>
+
+<p>In general, if you use an image, you should refer to it in the text to explain why it appears and what it depicts.</p>
+
+<h3 id="procedures"><a id='procedures'>Procedures</a></h3>
+
+<p>We have three styles. Use what works for the specific procedure. Try to use the same style throughout a topic.</p>
+
+<h4 id="standard-procedure">Standard Procedure</h4>
+
+<p>Standard numbered list with ending action as last item.</p>
+
+<p>Example:</p>
+
+<ol>
+<li>Select <strong>AWS Config</strong>.</li>
+<li>Do this.</li>
+<li>Do that.</li>
+<li>Do the other thing.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<h4 id="compact-procedure">Compact Procedure</h4>
+
+<p>Comprehensive instruction in a step with the ending action; might include a bullet list of fields underneath.</p>
+
+<p>Examples:</p>
+
+<ol>
+<li>Select &ldquo;TCP&rdquo; in <strong>Ping Protocol</strong> on the <strong>Configure Health Check</strong> page and ensure that the <strong>Ping Port</strong> value is &ldquo;80. Click <strong>Continue</strong>.</li>
+</ol>
+
+<p>or</p>
+
+<ol>
+<li>Select <strong>Create THING</strong> on the <strong>SOME_NAME</strong> page, enter the following information, and click <strong>Continue</strong>:
+
+<ul>
+<li><strong>FIELD</strong>: Enter &quot;VALUE&rdquo;.</li>
+<li><strong>FIELD</strong>: Enter &ldquo;VALUE&rdquo;.</li>
+<li><strong>FIELD</strong>: Enter &ldquo;VALUE&rdquo;.</li>
+</ul></li>
+</ol>
+
+<h4 id="alternate-compact-procedure">Alternate Compact Procedure</h4>
+
+<p>Comprehensive instruction in a step with bullet list of fields underneath, and final bullet is the ending action for that page (such as <strong>Save</strong>, <strong>Next Step</strong>, <strong>Create THING</strong>, etc.).</p>
+
+<p>Example:</p>
+
+<ol>
+<li>Specify the following details for your VPC:
+
+<ul>
+<li><strong>IP CIDR block</strong>: Enter &ldquo;10.0.0/16&rdquo;.</li>
+<li>Enter a <strong>VPC Name</strong>.</li>
+<li>Set both <strong>Availability Zone</strong> fields to an available &ldquo;us-east-1&rdquo; region value. You can set the subnets to the same AZ or set a different AZ for each subnet.</li>
+<li>Click <strong>Create VPC</strong>.</li>
+</ul></li>
+</ol>
+
+<h3 id="references"><a id='references'>References</a></h3>
+
+<p>When referring readers to another topic or section, link text that describes what they should expect to find at the reference. The text does not necessarily need to be the complete title of the topic, though that is often helpful.</p>
+
+<h2 id="product-naming-conventions"><a id='products'>Product Naming Conventions</a></h2>
+
+<p>On first reference in a topic, link the product name to the relevant product page. Including these links improves SEO.</p>
+
+<h3 id="cf-command-line-interface-tool">cf Command Line Interface Tool</h3>
+
+<p>Refers to the downloadable command line tool. On first reference in a topic, use the full name, Cloud Foundry Command Line Interface tool. On subsequent references, use <em>cf CLI</em>.</p>
+
+<h3 id="developer-console-(obsolete)">Developer Console (OBSOLETE)</h3>
+
+<p>See <em>Apps Manager</em>.</p>
+
+<h3 id="pivotal-cloud-foundry&reg;-apps-manager">Pivotal Cloud Foundry&reg; Apps Manager</h3>
+
+<p>Refers to the web-based console application for managing users, organizations, spaces, and applications. This term replaces the obsolete <em>Dev Console</em>. Use the full name on first reference. After the first reference in a topic, use the short version <em>Apps Manager</em>. Also use the short version for titles and headings.</p>
+
+<h3 id="pivotal-cloud-foundry&reg;-elastic-runtime">Pivotal Cloud Foundry&reg; Elastic Runtime</h3>
+
+<p>The on-premises, commercial, enterprise distribution of Cloud Foundry. On first reference, use full name. On subsequent references, use <em>Elastic Runtime</em>.</p>
+
+<h3 id="installation-dashboard">Installation Dashboard</h3>
+
+<p>The <em>Installation Dashboard</em> is a UI element in Ops Manager. It displays product tiles for each installed product in your PaaS.</p>
+
+<h3 id="pivotal-cf-(obsolete)">Pivotal CF (OBSOLETE)</h3>
+
+<p>Replace with <em>Pivotal Cloud Foundry&reg;</em>.</p>
+
+<h3 id="pivotal-cloud-foundry&reg;">Pivotal Cloud Foundry&reg;</h3>
+
+<p>Encompasses Ops Manager and Elastic Runtime. You should spell out and include a &ldquo;&reg;&rdquo; the first time you use this in topic, and, in most cases, you should include a link to the product page <a href="https://network.pivotal.io/products/pivotal-cf">https://network.pivotal.io/products/pivotal-cf</a>.</p>
+
+<p>Example: <a href="https://network.pivotal.io/products/pivotal-cf">Pivotal Cloud Foundry&reg;</a></p>
+
+<p>You can use the &ldquo;PCF&rdquo; acronym if you previously introduced it in a topic.</p>
+
+<p>Example: <a href="https://network.pivotal.io/products/pivotal-cf">Pivotal Cloud Foundry&reg;</a> (PCF)</p>
+
+<h3 id="pivotal-one-(obsolete)">Pivotal One (OBSOLETE)</h3>
+
+<p>This term is deprecated. Do not use it.</p>
+
+<h3 id="pivotal-cloud-foundry&reg;-operations-manager">Pivotal Cloud Foundry&reg; Operations Manager</h3>
+
+<p><em>Pivotal Cloud Foundry&reg; Operations Manager</em> is a web application that you use to deploy and manage a Pivotal Cloud Foundry&reg; PaaS. Use the full name on first reference. After the first reference in a topic, use the short version <em>Ops Manager</em>. Also use the short version for titles and headings.</p>
+
+<h3 id="product-tiles">Product Tiles</h3>
+
+<p>Use the term <em>product tiles</em> to refer specifically to the UI pills or squares on the Ops Manager Installation Dashboard. Use <em>products</em> otherwise, in the more general sense. In other words, a <em>tile</em> refers specifically to the UI object that you click. For example:</p>
+
+<p>The Installation Dashboard displays product tiles for each installed product in your PaaS.</p>
+
+<h2 id="resources"><a id='resources'>Resources</a></h2>
+
+<ul>
+<li>Refer to the <em>Chicago Manual of Style</em> as the arbiter of basic grammar questions.</li>
+<li>For guidelines on clarity and brevity, read Strunk and White’s <em>Elements of Style</em>.</li>
+</ul>
+
+        <div></div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <div class="copyright">
+  <a href='https://pivotal.io/privacy-policy'  target="_blank">Privacy Policy</a> | 
+  <a href='https://pivotal.io/terms-of-use'  target="_blank">Terms of Use</a>
+  <div id="teconsent"></div>
+
+  <br/>
+  <a href='/'>Pivotal Documentation</a>
+  &copy; 2019 <a href='https://pivotal.io' target="_blank">Pivotal Software</a>, Inc. All Rights Reserved.
+  <br/>
+  <br/>
+</div>
+<div class="support">
+  Need help? <a href="http://support.pivotal.io" target="_blank">Visit Support</a>
+</div>
+
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

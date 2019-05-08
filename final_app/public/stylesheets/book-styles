@@ -1,0 +1,13 @@
+/* line 11, book-styles.scss */
+main.content img {
+  outline: 1px solid black;
+  outline-offset: -1px; }
+/* line 16, book-styles.scss */
+main.content .title-container img {
+  outline: 0px;
+  outline-offset: 0px; }
+/* line 20, book-styles.scss */
+main.content .no-border {
+  outline: none;
+  outline-offset: 0;
+  border: none; }

@@ -1,5 +1,0 @@
-source "https://rubygems.org"
-
-gem 'bookbindery', "10.1.15"
-gem 'font-awesome-sass', '4.7.0'
-gem "rack", ">= 1.6.11"
