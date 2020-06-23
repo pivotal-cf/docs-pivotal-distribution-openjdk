@@ -5,37 +5,31 @@ owner: Spring Cloud Services?
 
 <strong><%= modified_date %></strong>
 
-Pivotal Distribution of OpenJDK is a distribution of [OpenJDK&reg;](https://openjdk.java.net). It comes in two flavors:
-
-* Binaries which Pivotal builds directly from the upstream [OpenJDK Mercurial source code repository](https://hg.openjdk.java.net/jdk/jdk). This distribution is the same OpenJDK distribution that has been distributed as part of the Pivotal Cloud Foundry Java buildpack since its inception, but it is now also available for use in Pivotal Container Service, in VMs, or on bare metal via Pivotal Spring Runtime. Platform support for these binaries is limited to Ubuntu Linux.
-* OpenJDK builds from [AdoptOpenJDK](https://adoptopenjdk.net), which offer wider platform support including macOS and Microsoft Windows.
-
+Pivotal Distribution of OpenJDK is a distribution of [OpenJDK&reg;](https://openjdk.java.net) from [BellSoft Liberica](https://bell-sw.com/pages/downloads/#/java-11-lts).
 
 ## Installation
 
 Pivotal Distribution of OpenJDK is available on [Pivotal Network](https://network.pivotal.io/products/pivotal-openjdk). 
 
-To install the Pivotal-built binaries:
+To install it:
 
-1. Download the latest Pivotal-built OpenJDK binary from [Pivotal Network](https://network.pivotal.io/products/pivotal-openjdk).
+1. Download the latest binary from [Pivotal Network](https://network.pivotal.io/products/pivotal-openjdk).
 1. Create the directory that will contain the OpenJDK distribution by using the following command:
 	<pre class="terminal">
-	$ mkdir openjdk-jre-12.0.0_33
+	$ mkdir jdk-11.0.7_10
 	</pre>
 1. Extract the compressed file into that directory by using the following command:
 	<pre class="terminal">
-	$ tar -xf openjdk-jre-12.0.0_33-trusty.tar.gz -C openjdk-jre-12.0.0_33
+	$ tar -xf bellsoft-jdk11.0.7+10-linux-amd64.tar.gz -C jdk-11.0.7_10
 	</pre>
 1. Add this version of Java to your PATH by using the following command:
 	<pre class="terminal">
-	$ export PATH=$PWD/openjdk-jre-12.0.0_33/bin:$PATH
+	$ export PATH=$PWD/jdk-11.0.7_10/bin:$PATH
 	</pre>
 1. Verify that the Java version is correct by using the following command:
 	<pre class="terminal">
 	$ java -version
 	</pre>
-
-To install binaries from AdoptOpenJDK, follow the [AdoptOpenJDK installation instructions](https://adoptopenjdk.net/installation.html).
 
 ## Support Lifecycle
 
